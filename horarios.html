@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Horarios — FISEI</title>
+    <script src="../assets/js/color-modes.js"></script>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="theme-color" content="#712cf9" />
+    <link href="carousel.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header data-bs-theme="dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">FISEI</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="horarios.html">Horarios</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="pt-5 mt-5 container">
+      <h1 class="mb-4 text-danger">Horarios por Asignatura</h1>
+
+      <!-- SOFTWARE -->
+      <h3>Ingeniería de Software</h3>
+      <div class="card shadow-sm my-4 horario-pdf"
+           data-pdf-src="assets/archivos/SOFTWARE.pdf">
+        <div class="card-body">
+          <h5 class="card-title">Horario en PDF</h5>
+          <div class="ratio ratio-16x9 rounded border pdf-viewer">
+            <iframe src="" title="Horario PDF — Software" allow="fullscreen" style="border:0"></iframe>
+          </div>
+          <div class="p-4 border rounded bg-body-tertiary pdf-fallback d-none">
+            <h5 class="mb-3">Bienvenidos a un nuevo semestre cargado de oportunidades y conocimiento 🎓</h5>
+            <p>
+              La Facultad de Ingeniería en Sistemas, Electrónica e Industrial se complace en presentar los horarios de clase para el período <strong>Agosto 2025 – Enero 2026</strong>.
+            </p>
+            <p>
+              Este semestre estará lleno de desafíos y aprendizajes que te impulsarán a crecer personal y profesionalmente.
+            </p>
+            <p class="mb-0"><strong>¡Te esperamos en clase con la mejor energía! 🚀</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROBÓTICA -->
+      <h3>Automatización y Robótica</h3>
+      <div class="card shadow-sm my-4 horario-pdf"
+           data-pdf-src="assets/archivos/ROBOTICA.pdf">
+        <div class="card-body">
+          <h5 class="card-title">Horario en PDF</h5>
+          <div class="ratio ratio-16x9 rounded border pdf-viewer">
+            <iframe src="" title="Horario PDF — Robótica" allow="fullscreen" style="border:0"></iframe>
+          </div>
+          <div class="p-4 border rounded bg-body-tertiary pdf-fallback d-none">
+            <h5 class="mb-3">Bienvenidos a un nuevo semestre cargado de oportunidades y conocimiento 🎓</h5>
+            <p>
+              La Facultad de Ingeniería en Sistemas, Electrónica e Industrial se complace en presentar los horarios de clase para el período <strong>Agosto 2025 – Enero 2026</strong>.
+            </p>
+            <p>
+              Este semestre estará lleno de desafíos y aprendizajes que te impulsarán a crecer personal y profesionalmente.
+            </p>
+            <p class="mb-0"><strong>¡Te esperamos en clase con la mejor energía! 🚀</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INDUSTRIAL -->
+      <h3>Ingeniería Industrial</h3>
+      <div class="card shadow-sm my-4 horario-pdf"
+           data-pdf-src="assets/archivos/INDUSTRIAL.pdf">
+        <div class="card-body">
+          <h5 class="card-title">Horario en PDF</h5>
+          <div class="ratio ratio-16x9 rounded border pdf-viewer">
+            <iframe src="" title="Horario PDF — Industrial" allow="fullscreen" style="border:0"></iframe>
+          </div>
+          <div class="p-4 border rounded bg-body-tertiary pdf-fallback d-none">
+            <h5 class="mb-3">Bienvenidos a un nuevo semestre cargado de oportunidades y conocimiento 🎓</h5>
+            <p>
+              La Facultad de Ingeniería en Sistemas, Electrónica e Industrial se complace en presentar los horarios de clase para el período <strong>Agosto 2025 – Enero 2026</strong>.
+            </p>
+            <p>
+              Este semestre estará lleno de desafíos y aprendizajes que te impulsarán a crecer personal y profesionalmente.
+            </p>
+            <p class="mb-0"><strong>¡Te esperamos en clase con la mejor energía! 🚀</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="mt-5">
+        <p class="float-end"><a href="#">Volver arriba</a></p>
+        <p>&copy; 2017–2025 FISEI</p>
+      </footer>
+    </main>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const blocks = document.querySelectorAll(".horario-pdf");
+        blocks.forEach(block => {
+          const src = block.getAttribute("data-pdf-src");
+          const viewer = block.querySelector(".pdf-viewer");
+          const iframe = viewer.querySelector("iframe");
+          const fallback = block.querySelector(".pdf-fallback");
+
+          if (!src) {
+            viewer.classList.add("d-none");
+            fallback.classList.remove("d-none");
+            return;
+          }
+
+          fetch(src, { method: "HEAD" })
+            .then(r => {
+              const isPDF = (r.headers.get("content-type") || "").includes("pdf");
+              if (r.ok && isPDF) {
+                iframe.src = src;
+              } else {
+                viewer.classList.add("d-none");
+                fallback.classList.remove("d-none");
+              }
+            })
+            .catch(() => {
+              viewer.classList.add("d-none");
+              fallback.classList.remove("d-none");
+            });
+        });
+      });
+    </script>
+  </body>
+</html>
