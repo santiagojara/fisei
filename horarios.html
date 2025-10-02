@@ -1,0 +1,215 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horarios FISEI</title>
+  <style>
+    /* General */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .logo .fisei {
+      color: red;
+    }
+
+    .navbar nav a {
+      margin: 0 10px;
+      color: #ccc;
+      text-decoration: none;
+    }
+    .navbar nav a:hover {
+      color: #fff;
+    }
+
+    .panel-btn {
+      background: #5a2c8d;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Layout */
+    .container {
+      display: flex;
+      flex: 1;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: #1a1a1a;
+      width: 220px;
+      padding: 15px;
+      overflow-y: auto;
+    }
+
+    .sidebar h3 {
+      margin: 15px 0 10px;
+      color: #fff;
+    }
+
+    .sidebar .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sidebar button {
+      background: #2a2a2a;
+      border: none;
+      padding: 8px;
+      border-radius: 6px;
+      color: #ccc;
+      cursor: pointer;
+    }
+    .sidebar button:hover {
+      background: #444;
+      color: #fff;
+    }
+
+    /* Schedule */
+    .schedule {
+      flex: 1;
+      padding: 20px;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .schedule .info {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .schedule .time {
+      font-size: 1.5rem;
+      margin-top: 5px;
+    }
+
+    .schedule .title {
+      background: #222;
+      text-align: center;
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    .schedule .days {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .schedule .days div {
+      background: #400000;
+      padding: 15px;
+      border-radius: 6px;
+      text-align: center;
+    }
+    .schedule .days div p {
+      margin-top: 8px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <header class="navbar">
+    <div class="logo">HORARIOS <span class="fisei">FISEI</span></div>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Horarios</a>
+      <a href="#">Docentes</a>
+      <a href="#">Aulas</a>
+      <a href="#">Nosotros</a>
+    </nav>
+    <button class="panel-btn">Panel Administrativo</button>
+  </header>
+
+  <main class="container">
+    <!-- Panel lateral -->
+    <aside class="sidebar">
+      <h3>Software</h3>
+      <div class="buttons">
+        <button>Nivelación A</button>
+        <button>Nivelación B</button>
+        <button>Primero A</button>
+        <button>Primero B</button>
+        <button>Segundo A</button>
+        <button>Segundo B</button>
+        <button>Tercero A</button>
+        <button>Tercero B</button>
+        <button>Cuarto A</button>
+        <button>Quinto A</button>
+        <button>Sexto A</button>
+        <button>Séptimo A</button>
+        <button>Octavo A</button>
+        <button>Noveno A</button>
+      </div>
+
+      <h3>Telecomunicaciones</h3>
+      <div class="buttons">
+        <button>Nivelación A</button>
+        <button>Nivelación B</button>
+        <button>Primero A</button>
+        <button>Primero B</button>
+      </div>
+    </aside>
+
+    <!-- Panel de horarios -->
+    <section class="schedule">
+      <div class="info">
+        <div>
+          <p><strong>Jueves, 2 de Octubre</strong></p>
+          <p class="time">14:46:27</p>
+        </div>
+        <div>
+          <p><strong>Periodo:</strong></p>
+          <p>AGOSTO 2025 - ENERO 2026</p>
+        </div>
+      </div>
+
+      <div class="title">
+        <h2>Seleccione una carrera</h2>
+        <p>Seleccione un semestre</p>
+      </div>
+
+      <div class="days">
+        <div><strong>Lunes</strong><p>No hay horarios disponibles.</p></div>
+        <div><strong>Martes</strong><p>No hay horarios disponibles.</p></div>
+        <div><strong>Miércoles</strong><p>No hay horarios disponibles.</p></div>
+        <div><strong>Jueves</strong><p>No hay horarios disponibles.</p></div>
+        <div><strong>Viernes</strong><p>No hay horarios disponibles.</p></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
