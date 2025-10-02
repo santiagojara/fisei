@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Horarios - FISEI</title>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      body {
+        padding-top: 4rem;
+      }
+      .schedule-table {
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">FISEI</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="horarios.html">Horarios</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <h1 class="mt-4 mb-3">Horarios de la Facultad</h1>
+      <div class="schedule-table">
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>Docente</th>
+              <th>Materia</th>
+              <th>Día</th>
+              <th>Hora</th>
+              <th>Aula</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ing. María López</td>
+              <td>Programación I</td>
+              <td>Lunes, Miércoles</td>
+              <td>08:00 - 10:00</td>
+              <td>Lab 101</td>
+            </tr>
+            <tr>
+              <td>Ing. Juan Pérez</td>
+              <td>Redes</td>
+              <td>Martes, Jueves</td>
+              <td>10:00 - 12:00</td>
+              <td>Lab 202</td>
+            </tr>
+            <tr>
+              <td>Ing. Ana Torres</td>
+              <td>Ingeniería de Software</td>
+              <td>Viernes</td>
+              <td>14:00 - 16:00</td>
+              <td>Aula 303</td>
+            </tr>
+            <tr>
+              <td>Ing. Carlos Ruiz</td>
+              <td>Robótica</td>
+              <td>Miércoles</td>
+              <td>16:00 - 18:00</td>
+              <td>Lab 404</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <footer class="container mt-5">
+      <p class="text-center">&copy; 2025 FISEI - Universidad Técnica de Ambato</p>
+    </footer>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
