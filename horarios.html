@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Horario Semanal</title>
+  <style>
+    :root { --bg:#f7f7f7; --card:#ffffff; --text:#222; --muted:#6b7280; --line:#e5e7eb; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; background:var(--bg); color:var(--text); }
+    .wrap { max-width: 980px; margin: 24px auto; padding: 0 16px; }
+    header { margin-bottom: 16px; }
+    h1 { font-size: 1.6rem; margin: 0 0 4px; }
+    .sub { color: var(--muted); font-size: .95rem; margin: 0 0 16px; }
+    .toolbar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+    .toolbar input { padding:8px 10px; border:1px solid var(--line); border-radius:8px; width: 260px; max-width:100%; }
+    .table-card { background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:auto; box-shadow: 0 2px 10px rgba(0,0,0,.04); }
+    table { width:100%; border-collapse: collapse; min-width:720px; }
+    thead th { position: sticky; top: 0; background: var(--card); z-index: 1; }
+    th, td { border-bottom: 1px solid var(--line); padding: 10px 12px; text-align: center; vertical-align: middle; }
+    th:first-child, td:first-child { text-align: left; width: 140px; white-space: nowrap; }
+    tbody tr:hover { background: #fafafa; }
+    .tag { display:inline-block; padding:4px 8px; border-radius:999px; border:1px solid var(--line); font-size:.85rem; }
+    .small { font-size: .85rem; color: var(--muted); }
+    footer { margin-top: 14px; color: var(--muted); font-size:.9rem; }
+    /* Modo compacto en pantallas pequeñas */
+    @media (max-width: 560px) {
+      th, td { padding: 8px 10px; }
+      .sub { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Horario Semanal</h1>
+      <p class="sub">Ejemplo simple (edita materias, aulas y horas a tu gusto).</p>
+      <div class="toolbar">
+        <input id="filtro" type="text" placeholder="Filtrar por materia / aula..." aria-label="Filtrar horario">
+      </div>
+    </header>
+
+    <div class="table-card">
+      <table id="tabla">
+        <thead>
+          <tr>
+            <th>Hora</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>08:00 - 09:00</th>
+            <td><span class="tag">Matemáticas</span><div class="small">Aula 101</div></td>
+            <td></td>
+            <td><span class="tag">Inglés</span><div class="small">Aula 202</div></td>
+            <td></td>
+            <td><span class="tag">Física</span><div class="small">Lab 1</div></td>
+          </tr>
+          <tr>
+            <th>09:00 - 10:00</th>
+            <td></td>
+            <td><span class="tag">Programación</span><div class="small">Lab 2</div></td>
+            <td></td>
+            <td><span class="tag">Historia</span><div class="small">Aula 105</div></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>10:00 - 11:00</th>
+            <td><span class="tag">Química</span><div class="small">Aula 110</div></td>
+            <td></td>
+            <td></td>
+            <td><span class="tag">Programación</span><div class="small">Lab 2</div></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>11:00 - 12:00</th>
+            <td></td>
+            <td><span class="tag">Educ. Física</span><div class="small">Cancha</div></td>
+            <td></td>
+            <td></td>
+            <td><span class="tag">Matemáticas</span><div class="small">Aula 101</div></td>
+          </tr>
+          <tr>
+            <th>12:00 - 13:00</th>
+            <td></td>
+            <td></td>
+            <td><span class="tag">Proyecto</span><div class="small">Sala B</div></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer>
+      Sugerencia: imprime desde el navegador (Ctrl/Cmd + P).
+    </footer>
+  </div>
+
+  <script>
+    // Filtro simple por texto (materia o aula)
+    const filtro = document.getElementById('filtro');
+    const filas = Array.from(document.querySelectorAll('#tabla tbody tr'));
+    filtro.addEventListener('input', () => {
+      const q = filtro.value.trim().toLowerCase();
+      filas.forEach(tr => {
+        const texto = tr.innerText.toLowerCase();
+        tr.style.display = texto.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
