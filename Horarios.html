@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FISEI - Horarios</title>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header data-bs-theme="dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">FISEI</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+              <li class="nav-item"><a class="nav-link" href="Horarios.html">Horarios</a></li>
+                 <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarCarreras" role="button" 
+       data-bs-toggle="dropdown" aria-expanded="false">
+      Carreras
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarCarreras">
+      <li><a class="dropdown-item" href="https://fisei.uta.edu.ec/v4.0/index.php/carreras-y-programas/software">Ingeniería de Software</a></li>
+      <li><a class="dropdown-item" href="https://fisei.uta.edu.ec/v4.0/index.php/carreras-y-programas/robotica">Ingeniería de Automatización y Robótica</a></li>
+      <li><a class="dropdown-item" href="https://fisei.uta.edu.ec/v4.0/index.php/carreras-y-programas/ingenieria-industrial">Ingeniería Industrialn</a></li>
+      <li><hr class="dropdown-divider"></li>
+    </ul>
+  </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Buscar
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="container" style="margin-top:100px;">
+      <h1 class="mb-4">Horarios de Clases</h1>
+
+      <h3>Ingeniería en Sistemas</h3>
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Curso</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Programación I</td>
+            <td>08:00 - 10:00</td>
+            <td>08:00 - 10:00</td>
+            <td>08:00 - 10:00</td>
+            <td>08:00 - 10:00</td>
+            <td>08:00 - 10:00</td>
+          </tr>
+          <tr>
+            <td>Matemáticas</td>
+            <td>10:00 - 12:00</td>
+            <td>10:00 - 12:00</td>
+            <td>10:00 - 12:00</td>
+            <td>10:00 - 12:00</td>
+            <td>10:00 - 12:00</td>
+          </tr>
+          <tr>
+            <td>Física</td>
+            <td>12:00 - 14:00</td>
+            <td>12:00 - 14:00</td>
+            <td>12:00 - 14:00</td>
+            <td>12:00 - 14:00</td>
+            <td>12:00 - 14:00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Ingeniería Electrónica</h3>
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Curso</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Electrónica I</td>
+            <td>08:00 - 10:00</td>
+            <td>08:00 - 10:00</td>
+            <td>08:00 - 10:00</td>
+            <td>08:00 - 10:00</td>
+            <td>08:00 - 10:00</td>
+          </tr>
+          <tr>
+            <td>Circuitos Digitales</td>
+            <td>10:00 - 12:00</td>
+            <td>10:00 - 12:00</td>
+            <td>10:00 - 12:00</td>
+            <td>10:00 - 12:00</td>
+            <td>10:00 - 12:00</td>
+          </tr>
+          <tr>
+            <td>Sistemas de Control</td>
+            <td>12:00 - 14:00</td>
+            <td>12:00 - 14:00</td>
+            <td>12:00 - 14:00</td>
+            <td>12:00 - 14:00</td>
+            <td>12:00 - 14:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="container mt-5">
+      <p class="float-end"><a href="#">Back to top</a></p>
+        <p>
+          Copyright &copy; Universidad Técnica de Ambato
+        </p>
+    </footer>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
